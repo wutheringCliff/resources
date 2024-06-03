@@ -16,6 +16,7 @@ if (url.includes("/searchbox")) {
     if ( $type === "recommend") {
         if (obj?.data?.novel?.recommend) {
             obj.data.novel.recommend = {};
+            console.log("推荐广告:"  + JSON.stringify(obj));
         }
     } else if($type === "adword") {
         obj.data = {};
