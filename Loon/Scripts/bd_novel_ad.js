@@ -9,8 +9,9 @@ console.log($response.body);
 console.log("bd_novel_ad" + url);
 
 if (url.includes("/searchbox")) {
+    const uri = new URL($request.url);
     // 使用URLSearchParams解析查询字符串
-    const params = new URLSearchParams(url.search);
+    const params = new URLSearchParams(uri.search);
     const $type = params.get("type");
     console.log("请求类型:"  + params.get("type"));
     //拦截推荐
