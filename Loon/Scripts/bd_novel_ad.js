@@ -1,7 +1,7 @@
 // 2024-06-03 19:00
 
+console.log("bd_novel_ad");
 const url = $request.url;
-const isQuanX = typeof $task !== "undefined";
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
