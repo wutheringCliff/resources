@@ -11,9 +11,10 @@ if (url.includes("/searchbox")) {
     // 使用URLSearchParams解析查询字符串
     const params = new URLSearchParams(uri.search);
     const $type = params.get("type");
-    console.log("请求类型:"  + params.get("type"));
+    console.log("请求类型:"  + $type);
     //拦截推荐
     if ( $type === "recommend") {
+        console.log(obj?.data?.novel?.recommend)
         if (obj?.data?.novel?.recommend) {
             obj.data.novel.recommend = {};
             console.log("推荐广告:"  + JSON.stringify(obj));
