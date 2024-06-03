@@ -5,6 +5,7 @@ const isQuanX = typeof $task !== "undefined";
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
+console.log($response.body);
 console.log("bd_novel_ad" + url);
 
 if (url.includes("/searchbox")) {
