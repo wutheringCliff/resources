@@ -29,7 +29,7 @@ if (url.includes("/searchbox")) {
             obj.data.novel.piratedcontentextra.dataset.adAtmosphere = {};
             obj.data.novel.piratedcontentextra.dataset.rewardAdInfo = {};
 
-            if (obj?.data?.novel?.piratedcontentextra?.dataset?.pass_back) {
+            if (obj?.data?.novel?.piratedcontentextra?.dataset?.pass_back.hasOwnProperty("hijack_in_whitelist")) {
                 obj.data.novel.piratedcontentextra.dataset.pass_back.hijack_in_whitelist = 0;
             }
         }
@@ -43,7 +43,9 @@ if (url.includes("/searchbox")) {
             obj.data.novel.bookfree.cloud_tts_on = 0;
             obj.data.novel.bookfree.speakers = {};
             obj.data.novel.bookfree.education_info = {};
-            obj.data.novel.bookfree.interstitialAdsV2.switch = "off";
+            if ( obj.data.novel.bookfree?.interstitialAdsV2?.hasOwnProperty("switch")) {
+                obj.data.novel.bookfree.interstitialAdsV2.switch = "off";
+            }
             obj.data.novel.bookfree.noadauth = {};
             obj.data.novel.bookfree.listenControlForceAdInfo = {};
             obj.data.novel.bookfree.ladder_reward_info = {};
