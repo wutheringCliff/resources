@@ -88,6 +88,10 @@ if (url.includes("/searchbox")) {
                 obj.data.novel.content.dataset.ad_freq_leftright = "0";
             }
 
+            if (obj.data.novel.content.dataset.hasOwnProperty("status_code")) {
+                //正常阅读
+                obj.data.novel.content.dataset.status_code = 100;
+            }
         }
     } else if ($type === "topnotice") {
         if  (obj?.data?.novel?.topnotice) {
