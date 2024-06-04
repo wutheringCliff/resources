@@ -3,8 +3,8 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-console.log($response.body);
-console.log("bd_novel_ad:" + url);
+console.log("bd_novel_ad_body",$response.body);
+console.log("bd_novel_ad_url:" + url);
 
 if (url.includes("/searchbox")) {
     //广告接口集合
@@ -13,7 +13,7 @@ if (url.includes("/searchbox")) {
     // 使用URLSearchParams解析查询字符串
     const params = new URLSearchParams(uri.search);
     const $type = params.get("type");
-    console.log("请求类型:"  + $type);
+    console.log("bd_novel_ad_type:"  + $type);
 
     if (ads.includes($type)) {
         obj.data = {};
