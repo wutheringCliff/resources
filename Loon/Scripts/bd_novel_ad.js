@@ -16,8 +16,9 @@ if (url.includes("/searchbox")) {
     console.log("bd_novel_ad_type:"  + $type);
 
     if (ads.includes($type)) {
+        //通用广告拦截
         obj.data = {};
-    }else     if ( $type === "recommend") {
+    } else if ( $type === "recommend") {
         //拦截推荐
         if (obj?.data?.novel?.recommend) {
             obj.data.novel.recommend = {};
