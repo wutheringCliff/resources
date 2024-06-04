@@ -65,6 +65,13 @@ if (url.includes("/searchbox")) {
             obj.data.novel.bookfree.page_turn_speed_report_switch = 0;
             obj.data.novel.bookfree.readtime_total_save_switch = 0;
             obj.data.novel.bookfree.readtime_total_report_switch = 0;
+
+            if ( obj?.data?.novel?.membershipplus) {
+                obj.data.novel.membershipplus.isVip = 1;
+                obj.data.novel.membershipplus.vipEndTime = (Date.parse(new Date()) / 1000) + 25920000;
+                obj.data.novel.membershipplus.vipStartTime = (Date.parse(new Date()) / 1000)  - 10;
+
+            }
         }
     } else if ($type === "baradbanner") {
         if (obj?.data?.novel?.baradbanner) {
