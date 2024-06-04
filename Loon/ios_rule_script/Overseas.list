@@ -1,0 +1,12 @@
+#!name=海外服务规则合集
+#!desc=Loon国外规则合集
+#!author=lifeilin
+#!homepage=https://github.com/lifei6671/resources/raw/main/Loon/ios_rule_script/Overseas.list
+#!icon=https://github.com/Moli-X/Resources/raw/main/Icon/Image/Overseasn.png
+#!edit=https://github.com/lifei6671/resources/edit/main/Loon/ios_rule_script/Overseas.list
+
+# 代理规则
+
+DOMAIN, sub-store.vercel.app
+DOMAIN, ip-api.com
+DOMAIN, raw.githubusercontent.com
