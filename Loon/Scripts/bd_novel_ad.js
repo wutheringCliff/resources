@@ -3,17 +3,17 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-console.log("bd_novel_ad_body" + $response.body);
-console.log("bd_novel_ad_url:" + url);
+console.log("bd_novel_ad_body: " + $response.body);
+console.log("bd_novel_ad_url: " + url);
 
 if (url.includes("/searchbox")) {
     //广告接口集合
-    const ads = ["rewardad","piratedbaradbanner","piratedad","commonad","shelfad","floatad","ad","adword","piratedad","eva","goadttscontrolforcead","radioreservoirbubble"];
+    const ads = ["rewardad","piratedbaradbanner","piratedad","commonad","shelfad","floatad","ad","adword","piratedad","eva","goadttscontrolforcead","radioreservoirbubble","readtimeacts","homechatentrance"];
     const uri = new URL($request.url);
     // 使用URLSearchParams解析查询字符串
     const params = new URLSearchParams(uri.search);
     const $type = params.get("type");
-    console.log("bd_novel_ad_type:"  + $type);
+    console.log("bd_novel_ad_type: "  + $type);
 
     if (ads.includes($type)) {
         //通用广告拦截
@@ -66,12 +66,20 @@ if (url.includes("/searchbox")) {
             obj.data.novel.bookfree.page_turn_speed_report_switch = 0;
             obj.data.novel.bookfree.readtime_total_save_switch = 0;
             obj.data.novel.bookfree.readtime_total_report_switch = 0;
+            obj.data.novel.bookfree.ttsControlForceAdInfo = {};
+            obj.data.novel.bookfree.floatad_info = {};
+            obj.data.novel.bookfree.recommend_limit = 0;
+            obj.data.novel.bookfree.toast_limit = 0;
+            obj.data.novel.bookfree.ttsSubtitlesInfo = {};
+            obj.data.novel.bookfree.listen_button_text = "";
+
 
             if ( obj?.data?.novel?.membershipplus) {
                 obj.data.novel.membershipplus.isVip = 1;
-                obj.data.novel.membershipplus.vipEndTime = (Date.parse(new Date()) / 1000) + 25920000;
+                obj.data.novel.membershipplus.isVipBookFree = 1;
+                obj.data.novel.membershipplus.vipEndTime = (Date.parse(new Date()) / 1000) + (25920000 * 10);
                 obj.data.novel.membershipplus.vipStartTime = (Date.parse(new Date()) / 1000)  - 10;
-
+                obj.data.novel.membershipplus.lastVipEndTime = (Date.parse(new Date()) / 1000) + (25920000 * 10);
             }
         }
     } else if ($type === "baradbanner") {
@@ -81,6 +89,10 @@ if (url.includes("/searchbox")) {
     } else if ($type === "content") {
         if  (obj?.data?.novel?.content?.dataset) {
             obj.data.novel.content.dataset.reward_info = {};
+            obj.data.novel.content.dataset.tts_reward_info = {};
+            obj.data.novel.content.dataset.tts_multiroles_info = {};
+            obj.data.novel.content.dataset.has_permission = true;
+            obj.data.novel.content.dataset. tts_flow_toast = 0;
 
             if (obj.data.novel.content.dataset.hasOwnProperty("ad_freq")){
                 obj.data.novel.content.dataset .ad_freq = "0";
