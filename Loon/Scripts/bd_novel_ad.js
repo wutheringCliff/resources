@@ -77,9 +77,9 @@ if (url.includes("/searchbox")) {
             if ( obj?.data?.novel?.membershipplus) {
                 obj.data.novel.membershipplus.isVip = 1;
                 obj.data.novel.membershipplus.isVipBookFree = 1;
-                obj.data.novel.membershipplus.vipEndTime = (Date.parse(new Date()) / 1000) + (25920000 * 10);
+                obj.data.novel.membershipplus.vipEndTime = (Date.parse(new Date()) / 1000) + (25920000 * 100);
                 obj.data.novel.membershipplus.vipStartTime = (Date.parse(new Date()) / 1000)  - 10;
-                obj.data.novel.membershipplus.lastVipEndTime = (Date.parse(new Date()) / 1000) + (25920000 * 10);
+                obj.data.novel.membershipplus.lastVipEndTime = (Date.parse(new Date()) / 1000) + (25920000 * 100);
             }
         }
     } else if ($type === "baradbanner") {
