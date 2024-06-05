@@ -13,5 +13,5 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, novelapi.baidu.com)), REJECT
 http-response ^https:\/\/novelapi\.baidu\.com\/searchbox\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_novel_ad.js, requires-body=true, timeout=60 ,tag=小说推荐
 
 [Mitm]
-hostname = novelapi.baidu.com
+hostname = novelapi.baidu.com,*.baidu.com
 
