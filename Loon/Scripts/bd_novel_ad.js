@@ -3,7 +3,7 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-console.log("bd_novel_ad_body",$response.body);
+console.log("bd_novel_ad_body" + $response.body);
 console.log("bd_novel_ad_url:" + url);
 
 if (url.includes("/searchbox")) {
