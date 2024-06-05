@@ -8,7 +8,7 @@ console.log("bd_novel_ad_url:" + url);
 
 if (url.includes("/searchbox")) {
     //广告接口集合
-    const ads = ["rewardad","piratedbaradbanner","piratedad","commonad","shelfad","floatad","ad","adword","piratedad","eva"];
+    const ads = ["rewardad","piratedbaradbanner","piratedad","commonad","shelfad","floatad","ad","adword","piratedad","eva","goadttscontrolforcead","radioreservoirbubble"];
     const uri = new URL($request.url);
     // 使用URLSearchParams解析查询字符串
     const params = new URLSearchParams(uri.search);
