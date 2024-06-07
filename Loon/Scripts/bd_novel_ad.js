@@ -3,8 +3,9 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-console.log("bd_novel_ad_body: " + $response.body);
 console.log("bd_novel_ad_url: " + url);
+console.log("bd_novel_ad_body: " + $response.body);
+
 
 if (url.includes("/searchbox")) {
     //广告接口集合
