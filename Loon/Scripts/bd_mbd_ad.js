@@ -29,7 +29,7 @@ if (url.includes("/searchbox")) {
         for (const key in obj.data) {
             if (obj.data.hasOwnProperty(key) ) {
                 const childNode = obj.data[key];
-                if (childNode.hasOwnProperty("itemlist")){
+                if (key === "100" && childNode.hasOwnProperty("itemlist")){
                     const itemList = childNode.itemlist;
                     if (itemList.hasOwnProperty("policies")) {
                         const policies = itemList.policies;
@@ -53,9 +53,10 @@ if (url.includes("/searchbox")) {
                         for (let item of itemList.items) {
                             if ( item.data?.mode === "ad") {
                                 //feed流广告
-                                console.log("bd_mbd_ad_feed: "+ JSON.stringify(item));
+                                console.log("bd_mbd_ad_feed_100_ad: "+ JSON.stringify(item));
                             } else if (item.data?.mode === "video"){
                                 //过滤视频
+                                console.log("bd_mbd_ad_feed_100_video: "+ JSON.stringify(item));
                             } else {
                                 newItems.push(item)
                             }
