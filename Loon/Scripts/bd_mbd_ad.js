@@ -70,6 +70,19 @@ if (url.includes("/searchbox")) {
                         childNode.data = {};
                     }
                 }
+                if (key === "308" && childNode.hasOwnProperty("list")) {
+                    //过滤feed流中存在的广告
+                    let newList = [];
+                    for (let item of childNode.list) {
+                        if ( item.data?.mode === "ad") {
+                            //feed流广告
+                            console.log("bd_mbd_ad_feed_308_ad: "+ JSON.stringify(item));
+                        } else {
+                            newList.push(item)
+                        }
+                    }
+                    childNode.list = newList;
+                }
             }
 
         }
