@@ -15,9 +15,9 @@ if (url.includes("/searchbox")) {
 
     if ($action === 'update') {
         if (obj?.data?.splash?.splash?.data.hasOwnProperty("conf")) {
-            obj.data.splash.splash.data.conf.day_show_count_max = 0;
-            obj.data.splash.splash.data.conf.hot_background_time = 0;
-            obj.data.splash.splash.data.conf.hot_boot_opt = 0;
+            // obj.data.splash.splash.data.conf.day_show_count_max = 0;
+            // obj.data.splash.splash.data.conf.hot_background_time = 0;
+            // obj.data.splash.splash.data.conf.hot_boot_opt = 0;
         }
         if (obj?.data?.splash?.splash?.data.hasOwnProperty("list")) {
             obj.data.splash.splash.data.list = [];
