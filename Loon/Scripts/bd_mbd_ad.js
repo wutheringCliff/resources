@@ -50,6 +50,7 @@ if (url.includes("/searchbox")) {
                     if (itemList.hasOwnProperty("items")) {
                         //过滤feed流中存在的广告
                         itemList.items = itemList.items.filter((item) => item.data?.mode === "ad");
+                        console.log("bd_mbd_ad:" + JSON.stringify(itemList.items))
                     }
                 }
             }
