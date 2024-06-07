@@ -54,6 +54,8 @@ if (url.includes("/searchbox")) {
                             if ( item.data?.mode === "ad") {
                                 //feed流广告
                                 console.log("bd_mbd_ad_feed: "+ JSON.stringify(item));
+                            } else if (item.data?.mode === "video"){
+                                //过滤视频
                             } else {
                                 newItems.push(item)
                             }
@@ -61,7 +63,14 @@ if (url.includes("/searchbox")) {
                         itemList.items = newItems;
                     }
                 }
+                if (key === "301" && childNode.hasOwnProperty("id")) {
+                    if (childNode.id.startsWith("ad")) {
+                        console.log("bd_mbd_ad_feed_301: " + childNode.id);
+                        childNode.data = {};
+                    }
+                }
             }
+
         }
     }
 }
