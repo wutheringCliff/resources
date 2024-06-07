@@ -15,15 +15,15 @@ if (url.includes("/searchbox")) {
 
     if ($action === 'update') {
         if (obj?.data?.splash?.splash?.data.hasOwnProperty("conf")) {
-            // obj.data.splash.splash.data.conf.day_show_count_max = 0;
-            // obj.data.splash.splash.data.conf.hot_background_time = 0;
-            // obj.data.splash.splash.data.conf.hot_boot_opt = 0;
+             obj.data.splash.splash.data.conf.day_show_count_max = 0;
+             obj.data.splash.splash.data.conf.hot_background_time = 0;
+             obj.data.splash.splash.data.conf.hot_boot_opt = 0;
         }
         if (obj?.data?.splash?.splash?.data.hasOwnProperty("list")) {
             obj.data.splash.splash.data.list = [];
         }
         if (obj?.data?.splash?.splash?.data.hasOwnProperty("policy")) {
-            obj.data.splash.splash.data.policy = {};
+            obj.data.splash.splash.data.policy.rt_load_info = {};
         }
     } else if ($action === 'feed') {
         for (const key in obj.data) {
@@ -49,8 +49,16 @@ if (url.includes("/searchbox")) {
 
                     if (itemList.hasOwnProperty("items")) {
                         //过滤feed流中存在的广告
-                        itemList.items = itemList.items.filter((item) => item.data?.mode === "ad");
-                        console.log("bd_mbd_ad:" + JSON.stringify(itemList.items))
+                        let newItems = [];
+                        for (let item of itemList.items) {
+                            if ( item.data?.mode === "ad") {
+                                //feed流广告
+                                console.log("bd_mbd_ad_feed: "+ JSON.stringify(item));
+                            } else {
+                                newItems.push(item)
+                            }
+                        }
+                        itemList.items = newItems;
                     }
                 }
             }
