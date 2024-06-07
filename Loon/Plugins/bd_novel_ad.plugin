@@ -1,7 +1,9 @@
 #!name = 去手百广告
 #!desc = 过滤手百小说广告，feed流广告，弹窗广告
 #!author = lifei6671
+#!icon = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/app_icon/Baidu.png
 #!openUrl =
+#!homepage = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Plugins/bd_novel_ad.plugin
 
 [Rule]
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, novelapi.baidu.com)), REJECT
