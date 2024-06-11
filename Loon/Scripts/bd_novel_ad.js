@@ -93,12 +93,14 @@ if (url.includes("/searchbox")) {
             obj.data.novel.content.dataset.tts_reward_info = {};
             obj.data.novel.content.dataset.tts_multiroles_info = {};
             obj.data.novel.content.dataset.has_permission = true;
-            obj.data.novel.content.dataset.permission_source = "backreadfree";
             obj.data.novel.content.dataset.tts_flow_toast = 0;
             obj.data.novel.content.dataset.permission_source ="whitelist_free";
+            if ( obj.data.novel.content.dataset.hasOwnProperty("preview_content_url")){
+                obj.data.novel.content.dataset.content_url = obj.data.novel.content.dataset.preview_content_url;
+            }
 
             if (obj.data.novel.content.dataset.hasOwnProperty("ad_freq")){
-                obj.data.novel.content.dataset .ad_freq = "0";
+                obj.data.novel.content.dataset.ad_freq = "0";
             }
             if (obj.data.novel.content.dataset.hasOwnProperty("ad_freq_leftright")) {
                 obj.data.novel.content.dataset.ad_freq_leftright = "0";
@@ -108,6 +110,7 @@ if (url.includes("/searchbox")) {
                 //正常阅读
                 obj.data.novel.content.dataset.status_code = 100;
             }
+
         }
     } else if ($type === "topnotice") {
         if  (obj?.data?.novel?.topnotice) {
