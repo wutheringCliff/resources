@@ -18,7 +18,7 @@ http-response ^https:\/\/novelapi\.baidu\.com\/searchbox\? script-path=https://r
 http-response ^https:\/\/(mbd|h2mbd)\.baidu\.com\/(searchbox|ccs|feedcmp)\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_mbd_ad.js, requires-body=true, timeout=60 ,tag=信息流广告
 
 # 手百广告2
-http-response ^https:\/\/novel-content-new\.cdn\.bcebos.com\/ script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_novel_ad.js, requires-body=true, timeout=60 ,tag=手百广告2
+http-response ^https:\/\/novel-content-new\.cdn\.bcebos\.com\/ script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_novel_ad.js, requires-body=true, timeout=60 ,tag=手百广告2
 
 
 [Mitm]
