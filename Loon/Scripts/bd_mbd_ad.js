@@ -3,8 +3,9 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-console.log("bd_mbd_ad_body: " + $response.body);
 console.log("bd_mbd_ad_url: " + url);
+console.log("bd_mbd_ad_body: " + $response.body);
+
 
 if (url.includes("/searchbox")) {
     const uri = new URL($request.url);

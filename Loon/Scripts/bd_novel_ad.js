@@ -93,7 +93,9 @@ if (url.includes("/searchbox")) {
             obj.data.novel.content.dataset.tts_reward_info = {};
             obj.data.novel.content.dataset.tts_multiroles_info = {};
             obj.data.novel.content.dataset.has_permission = true;
-            obj.data.novel.content.dataset. tts_flow_toast = 0;
+            obj.data.novel.content.dataset.permission_source = "backreadfree";
+            obj.data.novel.content.dataset.tts_flow_toast = 0;
+            obj.data.novel.content.dataset.permission_source ="whitelist_free";
 
             if (obj.data.novel.content.dataset.hasOwnProperty("ad_freq")){
                 obj.data.novel.content.dataset .ad_freq = "0";
