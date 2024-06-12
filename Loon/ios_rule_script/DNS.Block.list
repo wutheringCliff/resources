@@ -7,4 +7,5 @@
 
 DOMAIN-SUFFIX,gslb.yy.com
 DOMAIN-SUFFIX,a.bdydns.com
+DOMAIN-SUFFIX,opencdnv6.jomodns.com
 IP-CIDR,180.76.76.0/24
