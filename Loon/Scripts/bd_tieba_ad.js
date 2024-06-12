@@ -12,7 +12,20 @@ if (url.includes("/c/s/sync")) {
     }
     if (obj.hasOwnProperty("config")) {
        if (obj.config.hasOwnProperty("switch")) {
-           const names = ["ad_baichuan_open","ad_log_open","ad_stlog_switch","ad_sale_spread_icon","ad_screen_delay_switch","ad_to_maintabactivity_12_21"];
+           const names = [
+               "ad_baichuan_open",
+               "ad_log_open",
+               "ad_stlog_switch",
+               "ad_sale_spread_icon",
+               "ad_screen_delay_switch",
+               "ad_to_maintabactivity_12_21",
+               "12_46_ios_enable_bdhttpdns_switch",
+               "android_use_httpdnssdk_new",
+               "ios_use_httpdnssdk",
+               "switch_dnsproxy",
+               "ios_video_http_dns_open",
+               "android_video_http_dns_open"
+           ];
            for (const item of obj.config.switch){
                if (item.hasOwnProperty("name") && item.hasOwnProperty("type")) {
                    if (names.includes(item.name)){
