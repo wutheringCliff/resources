@@ -1,10 +1,10 @@
 #!name=海外服务规则合集
 #!desc=Loon国外规则合集
 #!author=lifei6671
-#!homepage=https://github.com/lifei6671/resources/raw/main/Loon/ios_rule_script/Overseas.list
+#!homepage=https://github.com/lifei6671/resources/raw/main/Loon/ios_rule_script/DNS.Block.list
 #!icon=https://github.com/Moli-X/Resources/raw/main/Icon/Image/Overseasn.png
-#!edit=https://github.com/lifei6671/resources/edit/main/Loon/ios_rule_script/Overseas.list
+#!edit=https://github.com/lifei6671/resources/edit/main/Loon/ios_rule_script/DNS.Block.list
 
-DOMAIN-SUFFIX,gslb.yy.com, REJECT
-DOMAIN-SUFFIX,a.bdydns.com, REJECT
-IP-CIDR,180.76.76.0/24,REJECT
+DOMAIN-SUFFIX,gslb.yy.com
+DOMAIN-SUFFIX,a.bdydns.com
+IP-CIDR,180.76.76.0/24
