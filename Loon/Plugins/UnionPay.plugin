@@ -8,17 +8,18 @@
 [Rule]
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, youhui.cup.com.cn)), REJECT
 DOMAIN, ads.cup.com.cn, REJECT
-DOMAIN, analytics.95516.com, REJECT
+#DOMAIN, analytics.95516.com, REJECT
 
 [Script]
 
 # 银联优惠
-http-response ^https:\/\/(youhui|content|life)\.cup\.com\.cn script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/union_pay.js, requires-body=true, timeout=60 ,tag=银联优惠
+http-response ^https:\/\/(youhui|content|life|foundation)\.cup\.com\.cn script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/union_pay.js, requires-body=true, timeout=60 ,tag=银联优惠
 
 # 银联广告
 #http-response ^https:\/\/(ads|openysf|foundation|tongzhi|hotpatch|content|account|life|base)\.cup\.com\.cn script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/union_pay.js, requires-body=true, timeout=60 ,tag=银联广告
 
 
 [Mitm]
-hostname = youhui.cup.com.cn,content.cup.com.cn, life.cup.com.cn
+hostname = youhui.cup.com.cn,content.cup.com.cn, life.cup.com.cn,foundation.cup.com.cn
+
 #ads.cup.com.cn,openysf.cup.com.cn,foundation.cup.com.cn,tongzhi.cup.com.cn,hotpatch.cup.com.cn,content.cup.com.cn,youhui.cup.com.cn,account.cup.com.cn,life.cup.com.cn,base.cup.com.cn
