@@ -8,4 +8,6 @@ console.log("union_pay_body: " + $response.body);
 
 
 
-$done({ body: JSON.stringify(obj) });
+// $done({ body: JSON.stringify(obj) });
+
+$done({ body: $response.body});
