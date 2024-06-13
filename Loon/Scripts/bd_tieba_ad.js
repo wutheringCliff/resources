@@ -24,7 +24,8 @@ if (url.includes("/c/s/sync")) {
                "ios_use_httpdnssdk",
                "switch_dnsproxy",
                "ios_video_http_dns_open",
-               "android_video_http_dns_open"
+               "android_video_http_dns_open",
+               "use_protobuf"
            ];
            for (const item of obj.config.switch){
                if (item.hasOwnProperty("name") && item.hasOwnProperty("type")) {
