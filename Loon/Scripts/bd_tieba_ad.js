@@ -72,5 +72,14 @@ if (url.includes("/c/f/frs/frsBottom")) {
     }
 }
 
+if(url.includes("/c/f/pb/picpage")) {
+    if (obj.hasOwnProperty("recom_ala_info")) {
+        obj.recom_ala_info = [];
+    }
+    //屏蔽直播推荐
+    if (obj.hasOwnProperty("recom_live_list")) {
+        obj.recom_live_list = [];
+    }
+}
 
 $done({ body: JSON.stringify(obj) });
