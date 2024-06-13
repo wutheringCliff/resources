@@ -66,6 +66,11 @@ if (url.includes("/c/s/sync")) {
 
 }
 
+if (url.includes("/c/f/frs/frsBottom")) {
+    if (obj.hasOwnProperty("live_fuse_forum")) {
+        obj.live_fuse_forum = [];
+    }
+}
 
 
 $done({ body: JSON.stringify(obj) });
