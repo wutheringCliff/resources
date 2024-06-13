@@ -81,5 +81,10 @@ if(url.includes("/c/f/pb/picpage")) {
         obj.recom_live_list = [];
     }
 }
+if(url.includes("/c/f/frs/frsBottom")) {
+    if (obj.hasOwnProperty("live_fuse_forum")) {
+        obj.live_fuse_forum = [];
+    }
+}
 
 $done({ body: JSON.stringify(obj) });
