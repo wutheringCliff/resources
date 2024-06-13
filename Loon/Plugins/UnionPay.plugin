@@ -6,7 +6,7 @@
 #!homepage = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Plugins/UnionPay.plugin
 
 [Rule]
-DOMAIN, ads.cup.com.cn, REJECT
+#DOMAIN, ads.cup.com.cn, REJECT
 #DOMAIN, analytics.95516.com, REJECT
 
 [Script]
