@@ -1,0 +1,22 @@
+#!name = 云闪付去广告
+#!desc = 过滤云闪付APP广告
+#!author = lifei6671
+#!icon = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/app_icon/UnionPay.png
+#!openUrl =
+#!homepage = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Plugins/UnionPay.plugin
+
+[Rule]
+DOMAIN, ads.cup.com.cn, REJECT
+DOMAIN, analytics.95516.com, REJECT
+
+[Script]
+
+# 银联优惠
+http-response ^https:\/\/youhui\.cup\.com\.cn script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/union_pay.js, requires-body=true, timeout=60 ,tag=银联优惠
+
+# 银联广告
+http-response ^https:\/\/(antifraud|openysf|foundation|tongzhi|device|hotpatch|content|account|life|base)\.cup\.com\.cn script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/union_pay.js, requires-body=true, timeout=60 ,tag=银联广告
+
+
+[Mitm]
+hostname = antifraud.cup.com.cn,openysf.cup.com.cn,foundation.cup.com.cn,tongzhi.cup.com.cn,device.cup.com.cn,hotpatch.cup.com.cn,content.cup.com.cn,youhui.cup.com.cn,account.cup.com.cn,life.cup.com.cn,base.cup.com.cn
