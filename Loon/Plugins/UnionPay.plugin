@@ -8,7 +8,7 @@
 [Rule]
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, youhui.cup.com.cn)), REJECT
 DOMAIN, ads.cup.com.cn, REJECT
-#DOMAIN, analytics.95516.com, REJECT
+DOMAIN, analytics.95516.com, REJECT
 
 [Script]
 
