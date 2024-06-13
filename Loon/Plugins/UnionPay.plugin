@@ -8,7 +8,7 @@
 [Rule]
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, youhui.cup.com.cn)), REJECT
 DOMAIN, ads.cup.com.cn, REJECT
-#DOMAIN, analytics.95516.com, REJECT
+DOMAIN, analytics.95516.com, REJECT
 
 [Script]
 
@@ -20,6 +20,6 @@ http-response ^https:\/\/(youhui|content|life|foundation)\.cup\.com\.cn script-p
 
 
 [Mitm]
-hostname = youhui.cup.com.cn,content.cup.com.cn, life.cup.com.cn,foundation.cup.com.cn
+hostname = youhui.cup.com.cn, life.cup.com.cn,foundation.cup.com.cn
 
 #ads.cup.com.cn,openysf.cup.com.cn,foundation.cup.com.cn,tongzhi.cup.com.cn,hotpatch.cup.com.cn,content.cup.com.cn,youhui.cup.com.cn,account.cup.com.cn,life.cup.com.cn,base.cup.com.cn
