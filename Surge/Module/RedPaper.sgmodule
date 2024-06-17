@@ -28,12 +28,12 @@
 # 移除图片和视频水印
 #http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/(note\/feed|note\/videofeed)\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 移除图片和视频水印
 
-小红书_移除图片和视频水印=type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/(note\/feed|note\/videofeed)\?,requires-body=1,script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/RedPaper/RedPaper_remove_ads.js
+小红书_移除图片和视频水印=type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/(note\/feed|note\/videofeed)\?,requires-body=true,script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/RedPaper/RedPaper_remove_ads.js
 
 
 # 移除图片和实况照片水印
 #http-response https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/(imagefeed|feed|live_photo\/save) script-path = https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = 移除图片和实况照片水印
-小红书_移除图片和实况照片水印=type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/(imagefeed|feed|live_photo\/save),requires-body=1,script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/RedPaper/RedPaper_remove_ads.js
+小红书_移除图片和实况照片水印=type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/(imagefeed|feed|live_photo\/save),requires-body=true,script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/RedPaper/RedPaper_remove_ads.js
 
 
 [MITM]
