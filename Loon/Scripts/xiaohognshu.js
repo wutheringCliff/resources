@@ -11,6 +11,7 @@ let rsp_body = $response.body;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
+console.log("xiaohognshu_url: " + url);
 if (url.includes("/v1/search/banner_list")) {
     if (obj?.data) {
         obj.data = {};
