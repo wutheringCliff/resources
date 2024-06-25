@@ -12,5 +12,7 @@ DOMAIN-SUFFIX,yyrisk-httpproxy.yy.com
 
 DOMAIN,union-httpdns.gslb.yy.com
 DOMAIN,httpdns.biadubce.com
+DOMAIN,ipv6.shuzilm.cn
+DOMAIN,ipv4.shuzilm.cn
 
 IP-CIDR,180.76.76.0/24

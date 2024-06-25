@@ -1,0 +1,28 @@
+#!name = 翻咔去广告
+#!desc = 过滤信息流推广，如有异常，请先清除缓存再尝试。
+#!openUrl =
+#!author =
+#!icon = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/app_icon/Finka.webp
+#!openUrl =
+#!homepage = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Plugins/Finka.plugin
+
+[Rule]
+AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, api.finka.cn)), REJECT
+
+[Rewrite]
+#翻咔广告
+^https:\/\/api\.finka\.cn\/ad\/list reject-dict
+^https:\/\/api\.finka\.cn\/ad\/request reject-dict
+^https:\/\/api\.finka\.cn\/ad\/show reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/settings\? reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/settings\? reject-dict
+^https:\/\/gromore\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/mediation\/config\? reject-dict
+^https:\/\/open\.e\.kushaishou\.com\/rest\/e\/v3\/open\/config reject-dict
+
+[Script]
+#翻咔feed流广告
+http-response ^https:\/\/api\.finka\.cn\/feed\/v5\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Finka.js, requires-body=true, timeout=60 ,tag=#翻咔feed流广告
+
+
+[Mitm]
+hostname =  api.finka.cn
