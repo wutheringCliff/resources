@@ -9,7 +9,7 @@ console.log("bd_novel_ad_body: " + $response.body);
 
 if (url.includes("/searchbox")) {
     //广告接口集合
-    const ads = ["rewardad","piratedbaradbanner","piratedad","commonad","shelfad","floatad","ad","adword","piratedad","eva","goadttscontrolforcead","radioreservoirbubble","readtimeacts","homechatentrance"];
+    const ads = ["rewardad","piratedbaradbanner","readersignnoticeV2","piratedad","commonad","shelfad","floatad","ad","adword","piratedad","eva","goadttscontrolforcead","radioreservoirbubble","readtimeacts","homechatentrance"];
     const uri = new URL($request.url);
     // 使用URLSearchParams解析查询字符串
     const params = new URLSearchParams(uri.search);

@@ -5,11 +5,12 @@
 #!icon=https://github.com/Moli-X/Resources/raw/main/Icon/Image/Overseasn.png
 #!edit=https://github.com/lifei6671/resources/edit/main/Loon/ios_rule_script/DNS.Block.list
 
-DOMAIN-SUFFIX,gslb.yy.com
+
 DOMAIN-SUFFIX,a.bdydns.com
 DOMAIN-SUFFIX,.jomodns.com
 DOMAIN-SUFFIX,yyrisk-httpproxy.yy.com
 
+DOMAIN,union-httpdns.gslb.yy.com
 DOMAIN,httpdns.biadubce.com
 
 IP-CIDR,180.76.76.0/24

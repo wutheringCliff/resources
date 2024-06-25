@@ -1,0 +1,17 @@
+#!name = 雪球去广告
+#!desc = 过滤信息流推广，如有异常，请先清除缓存再尝试。
+#!openUrl =
+#!author =
+#!icon = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/app_icon/XueQiu.png
+#!openUrl =
+#!homepage = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Plugins/XueQiu.plugin
+
+[Rule]
+AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, api.xueqiu.com)), REJECT
+
+[Rewrite]
+#雪球广告
+^https:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\? reject-dict
+
+[Script]
+
