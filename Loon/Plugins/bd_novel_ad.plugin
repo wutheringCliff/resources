@@ -11,7 +11,8 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, novelapi.baidu.com)), REJECT
 [Rewrite]
 #小度广告
 ^https:\/\/xiaodu\.baidu\.com\/xiaoduapp\/v1\/index\/index\/flashScreen reject-dict
-^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/settings\? reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/ reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads\? reject-dict
 ^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/settings\? reject-dict
 ^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/stats\/batch\? reject-dict
 
