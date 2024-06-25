@@ -1,0 +1,20 @@
+#!name = 脉脉去广告
+#!desc = 过滤信息流推广，如有异常，请先清除缓存再尝试。
+#!openUrl =
+#!author =
+#!icon = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/app_icon/MaiMai.png
+#!openUrl =
+#!homepage = https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Plugins/MaiMai.plugin
+
+[Rule]
+AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, h3.open.taou.com)), REJECT
+
+[Rewrite]
+
+
+[Script]
+#脉脉APP内推送
+http-response ^https:\/\/h3.open.taou.com\/maimai\/pbs/can_guide_switcher\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/MaiMai.js, requires-body=true, timeout=60 ,tag=脉脉APP内推送
+
+[Mitm]
+hostname =  h3.open.taou.com
