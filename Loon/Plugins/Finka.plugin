@@ -23,6 +23,9 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, api.finka.cn)), REJECT
 #翻咔feed流广告
 http-response ^https:\/\/api\.finka\.cn\/feed\/v5\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Finka.js, requires-body=true, timeout=60 ,tag=#翻咔feed流广告
 
+#翻咔会员解锁
+http-response ^https:\/\/api\.finka\.cn\/user\/profile\/view\/v3\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Finka.js, requires-body=true, timeout=60 ,tag=#翻咔feed流广告
+
 
 [Mitm]
 hostname =  api.finka.cn

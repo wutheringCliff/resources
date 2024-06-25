@@ -13,6 +13,19 @@ if (url.includes("/feed/v5")) {
         }
     }
 }
+if (url.includes("/usr/profile/view/v3")) {
+    if (obj.data?.hasOwnProperty("user")){
+        if (obj.data.user.hasOwnProperty("vip")) {
+            obj.data.user.vip = true;
+        }
+        if (obj.data.user.hasOwnProperty("ssvip")) {
+            obj.data.user.vip = true;
+        }
+        if (obj.data.user.hasOwnProperty("svip")) {
+            obj.data.user.svip = true;
+        }
+    }
+}
 
 
 $done({ body: JSON.stringify(obj) });
