@@ -27,7 +27,7 @@ http-response ^https:\/\/api\.finka\.cn\/feed\/v5\? script-path=https://raw.gith
 http-response ^https:\/\/api\.finka\.cn\/user\/profile\/view\/v3\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Finka.js, requires-body=true, timeout=60 ,tag=翻咔会员解锁
 
 #翻咔个人主页广告
-http-response ^https:\/\/api\.finka\.cn\/user\/profile\/view\/v2\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Finka.js, requires-body=true, timeout=60 ,tag=翻咔个人主页广告
+http-response ^https:\/\/api\.finka\.cn\/user\/profile\/info\/v2\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Finka.js, requires-body=true, timeout=60 ,tag=翻咔个人主页广告
 
 
 [Mitm]

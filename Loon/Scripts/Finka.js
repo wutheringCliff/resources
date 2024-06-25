@@ -27,7 +27,7 @@ if (url.includes("/usr/profile/view/v3")) {
     }
 }
 
-if (url.includes("/usr/profile/view/v2")) {
+if (url.includes("/usr/profile/info/v2")) {
     if (obj.data?.hasOwnProperty("ad")) {
         obj.data.ad = [];
     }
