@@ -19,7 +19,7 @@ if (url.includes("/usr/profile/view/v3")) {
             obj.data.user.vip = true;
         }
         if (obj.data.user.hasOwnProperty("ssvip")) {
-            obj.data.user.vip = true;
+            obj.data.user.ssvip = true;
         }
         if (obj.data.user.hasOwnProperty("svip")) {
             obj.data.user.svip = true;
@@ -27,5 +27,16 @@ if (url.includes("/usr/profile/view/v3")) {
     }
 }
 
+if (url.includes("/usr/profile/view/v2")) {
+    if (obj.data?.hasOwnProperty("ad")) {
+        obj.data.ad = [];
+    }
+    if (obj.data?.hasOwnProperty("profilePasterAd")) {
+        obj.data.profilePasterAd = {};
+    }
+    if (obj.data?.hasOwnProperty("featuredServicesList")) {
+        obj.data.featuredServicesList = [];
+    }
+}
 
 $done({ body: JSON.stringify(obj) });
