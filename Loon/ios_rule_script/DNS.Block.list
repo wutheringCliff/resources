@@ -9,4 +9,7 @@ DOMAIN-SUFFIX,gslb.yy.com
 DOMAIN-SUFFIX,a.bdydns.com
 DOMAIN-SUFFIX,.jomodns.com
 DOMAIN-SUFFIX,yyrisk-httpproxy.yy.com
+
+DOMAIN,httpdns.biadubce.com
+
 IP-CIDR,180.76.76.0/24
