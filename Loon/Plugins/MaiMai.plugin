@@ -10,7 +10,8 @@
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, h3.open.taou.com)), REJECT
 
 [Rewrite]
-
+#脉脉广告追踪
+^https:\/\/open\.taou\.com\/maimai\/adtk\? reject-dict
 
 [Script]
 #脉脉APP内推送

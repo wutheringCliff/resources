@@ -19,7 +19,7 @@ if (url.includes("/maimai/adshow")) {
 }
 if (url.includes("/maimai/feed/v5/focus_feed")) {
     if (obj.hasOwnProperty("feeds")) {
-        obj.feeds = obj.feeds.filter((i) => i?.hasOwnProperty("newAdStyle"));
+        obj.feeds = obj.feeds.filter((feed) => !feed?.hasOwnProperty("newAdStyle"));
     }
 }
 
