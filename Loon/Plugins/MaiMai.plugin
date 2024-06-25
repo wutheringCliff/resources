@@ -17,5 +17,8 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, h3.open.taou.com)), REJECT
 #脉脉APP内推送
 http-response ^https:\/\/h3.open.taou.com\/maimai\/pbs/can_guide_switcher\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/MaiMai.js, requires-body=true, timeout=60 ,tag=脉脉APP内推送
 
+#脉脉feed流广告
+http-response ^https:\/\/h3.open.taou.com\/maimai\/feed\/v5\/focus_feed\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/MaiMai.js, requires-body=true, timeout=60 ,tag=脉脉feed流广告
+
 [Mitm]
 hostname =  h3.open.taou.com
