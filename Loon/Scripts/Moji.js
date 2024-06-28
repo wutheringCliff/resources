@@ -7,7 +7,7 @@ console.log("moji_ad_url: " + url);
 console.log("moji_ad_body: " + $response.body);
 
 if (url.includes("/data/detail")) {
-    
+
 }
 
 
