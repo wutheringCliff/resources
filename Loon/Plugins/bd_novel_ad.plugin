@@ -17,7 +17,7 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, novelapi.baidu.com)), REJECT
 ^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/stats\/batch\? reject-dict
 
 #手百广告
-#^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\? reject-dict
+^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\? reject-dict
 ^https:\/\/pmp-ad\.cdn\.bcebos\.com reject-dict
 
 [Script]
@@ -26,12 +26,12 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, novelapi.baidu.com)), REJECT
 http-response ^https:\/\/novelapi\.baidu\.com\/searchbox\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_novel_ad.js, requires-body=true, timeout=60 ,tag=小说推荐
 
 # 信息流广告
-http-response ^https:\/\/(mbd|h2mbd)\.baidu\.com\/(searchbox|ccs|feedcmp)\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_mbd_ad.js, requires-body=true, timeout=60 ,tag=信息流广告
+http-response ^https:\/\/mbd\.baidu\.com\/(searchbox|ccs|feedcmp)\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_mbd_ad.js, requires-body=true, timeout=60 ,tag=信息流广告
 
 # 贴吧广告
 http-response ^https:\/\/(tieba|tiebac|tiebaa|wapp|m\.tieba|wap|c\.tieba)\.baidu\.com script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/bd_tieba_ad.js, requires-body=true, timeout=60 ,tag=贴吧广告
 
 
 [Mitm]
-hostname = novelapi.baidu.com,m.baidu.com, h2mbd.baidu.com, mbd.baidu.com,tieba.baidu.com,tieba.baidu.com,tiebac.baidu.com,tiebaa.baidu.com,m.tieba.baidu.com,wapp.baidu.com,c.tieba.baidu.com
+hostname = novelapi.baidu.com,m.baidu.com, mbd.baidu.com,tieba.baidu.com,tieba.baidu.com,tiebac.baidu.com,tiebaa.baidu.com,m.tieba.baidu.com,wapp.baidu.com,c.tieba.baidu.com
 
