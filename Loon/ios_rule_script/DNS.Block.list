@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,.jomodns.com
 DOMAIN-SUFFIX,yyrisk-httpproxy.yy.com
 
 DOMAIN,union-httpdns.gslb.yy.com
-DOMAIN,httpdns.biadubce.com
+#DOMAIN,httpdns.biadubce.com
 DOMAIN,ipv6.shuzilm.cn
 DOMAIN,ipv4.shuzilm.cn
 DOMAIN,dns.weixin.qq.com
