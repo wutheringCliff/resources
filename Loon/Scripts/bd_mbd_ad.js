@@ -90,5 +90,8 @@ if (url.includes("/searchbox")) {
     }
 }
 
+if(url.includes("/newspage/api/getmobads")) {
+    
+}
 
 $done({ body: JSON.stringify(obj) });
