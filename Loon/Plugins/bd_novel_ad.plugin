@@ -16,6 +16,9 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, novelapi.baidu.com)), REJECT
 ^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/settings\? reject-dict
 ^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/stats\/batch\? reject-dict
 
+#手百广告
+^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\? reject-dict
+
 [Script]
 
 # 小说推荐
