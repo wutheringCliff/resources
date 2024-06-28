@@ -18,6 +18,7 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, novelapi.baidu.com)), REJECT
 
 #手百广告
 #^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\? reject-dict
+^https:\/\/pmp-ad\.cdn\.bcebos\.com reject-dict
 
 [Script]
 
