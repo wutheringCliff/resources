@@ -22,4 +22,4 @@ http-response ^https:\/\/psnlz\.api\.moji\.com\/user-conf-server\/diamondConf\? 
 
 
 [Mitm]
-hostname = ssfo.api.moji.com, uupt.api.moji.com,psnlz.zpi.moji.com
+hostname = ssfo.api.moji.com, uupt.api.moji.com,psnlz.api.moji.com
