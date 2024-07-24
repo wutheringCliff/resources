@@ -16,10 +16,10 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, weather.api.moji.com)), REJECT
 
 [Script]
 
-# 墨迹首页
-http-response ^https:\/\/weather\.api\.moji\.com\/data\/detail script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Moji.js, requires-body=true, timeout=60 ,tag=墨迹首页
-
 http-response ^https:\/\/uupt\.api\.moji\.com\/json\/upgrade script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Moji.js, requires-body=true, timeout=60 ,tag=墨迹首页
 
+http-response ^https:\/\/psnlz\.api\.moji\.com\/user-conf-server\/diamondConf\? script-path=https://raw.githubusercontent.com/lifei6671/resources/master/Loon/Scripts/Moji.js, requires-body=true, timeout=60 ,tag=墨迹首页
+
+
 [Mitm]
-hostname = weather.api.moji.com,ssfo.api.moji.com, uupt.api.moji.com
+hostname = ssfo.api.moji.com, uupt.api.moji.com,psnlz.zpi.moji.com

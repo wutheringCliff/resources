@@ -7,10 +7,6 @@ let obj = JSON.parse($response.body);
 
 console.log("moji_ad_body: " + $response.body);
 
-if (url.includes("/data/detail")) {
-
-}
-
 if (url.includes("/json/upgrade")) {
     if (obj.hasOwnProperty("basic_config")) {
         obj.basic_config.member_short_raintype_vip =["0"];
@@ -26,6 +22,14 @@ if (url.includes("/json/upgrade")) {
         if (obj.basic_config.hasOwnProperty("member_weather40day_vip")) {
             obj.basic_config.member_weather40day_vip[0] = "0";
         }
+    }
+}
+if (url.includes("/user-conf-server/diamondConf")) {
+    if (obj.hasOwnProperty("defaultData")) {
+        obj.defaultData = [];
+    }
+    if (obj.hasOwnProperty("recData")) {
+        obj.recData = [];
     }
 }
 
