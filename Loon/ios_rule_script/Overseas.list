@@ -14,5 +14,5 @@ DOMAIN, i.ytimg.com
 DOMAIN, api.cobalt.tools
 DOMAIN-SUFFIX, 顶级机场.com
 DOMAIN-SUFFIX, ksky.app
-DOMAIN, ksky.social
-DOMAIN, ksky.app
+DOMAIN-SUFFIX, ksky.social
+
