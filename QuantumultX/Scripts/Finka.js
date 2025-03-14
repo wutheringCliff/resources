@@ -31,4 +31,6 @@ if (url.includes("/user/profile/info/v2")) {
     }
 }
 
+console.log("Finka_Response_Revised_Body: " + {body: JSON.stringify(obj)});
+
 $done({body: JSON.stringify(obj)});
