@@ -17,14 +17,13 @@
 ^https:\/\/open\.e\.kushaishou\.com\/rest\/e\/v3\/open\/config url reject-dict
 
 #[Script]
-#翻咔feed流广告
-^https:\/\/api\.finka\.cn\/feed\/v5\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+^https:\/\/api\.finka\.cn\/vas\/(nearby\/v2|visitor)(\/.*|\?.*)?$ url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+^https:\/\/api\.finka\.cn\/user\/(?:setting\/filter|profile\/view\/v3).* url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+^https:\/\/api\.finka\.cn\/inbox\/session\/get\/v3.* url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+^https:\/\/api\.finka\.cn\/group\/session(\?.*|$) url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
 
-#翻咔会员解锁
-^https:\/\/api\.finka\.cn\/user\/profile\/view\/v3\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
-
-#翻咔个人主页广告
-^https:\/\/api\.finka\.cn\/user\/profile\/info\/v2\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+#（匹配所有 finka.cn 请求）
+#^https:\/\/.*finka\.cn.* url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
 
 #[MITM]
 hostname = api.finka.cn, api-access.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao1.com, gromore.pangolin-sdk-toutiao.com, open.e.kushaishou.com
