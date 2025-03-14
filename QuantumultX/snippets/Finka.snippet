@@ -1,0 +1,30 @@
+#!name = 翻咔去广告
+#!desc = 过滤信息流推广，如有异常，请先清除缓存再尝试。
+#!openUrl =
+#!author =
+#!icon = https://raw.githubusercontent.com/wutheringCliff/resources/master/Loon/app_icon/Finka.webp
+#!openUrl =
+#!homepage = https://raw.githubusercontent.com/wutheringCliff/resources/master/Loon/Plugins/Finka.plugin
+
+#[rewrite_local]
+# 翻咔广告路径拦截
+^https:\/\/api\.finka\.cn\/ad\/list url reject-dict
+^https:\/\/api\.finka\.cn\/ad\/request url reject-dict
+^https:\/\/api\.finka\.cn\/ad\/show url reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/settings\? url reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/settings\? url reject-dict
+^https:\/\/gromore\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/mediation\/config\? url reject-dict
+^https:\/\/open\.e\.kushaishou\.com\/rest\/e\/v3\/open\/config url reject-dict
+
+#[Script]
+#翻咔feed流广告
+^https:\/\/api\.finka\.cn\/feed\/v5\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+
+#翻咔会员解锁
+^https:\/\/api\.finka\.cn\/user\/profile\/view\/v3\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+
+#翻咔个人主页广告
+^https:\/\/api\.finka\.cn\/user\/profile\/info\/v2\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/Finka.js
+
+#[MITM]
+hostname = api.finka.cn, api-access.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao1.com, gromore.pangolin-sdk-toutiao.com, open.e.kushaishou.com
