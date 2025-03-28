@@ -1,0 +1,19 @@
+#!name = blued
+#!desc = 过滤信息流推广，如有异常，请先清除缓存再尝试。
+#!openUrl =
+#!author =
+#!icon =
+#!openUrl =
+#!homepage =
+
+#[rewrite_local]
+# 广告路径拦截
+^https:\/\/p3-be-pack-sign\.pglstatp-toutiao\.com\/ad\.union\.api\/ url reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao-b\.com\/api\/ad\/union\/sdk\/get_ads url reject-dict
+^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk url reject-dict
+
+#[Script]
+^https:\/\/social\.blued\.cn\/users\/\d+\/visitors\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/blued.js
+
+#[MITM]
+hostname = social.blued.cn, api-access.pangolin-sdk-toutiao1.com, api-access.pangolin-sdk-toutiao-b.com, p3-be-pack-sign.pglstatp-toutiao.com
