@@ -13,7 +13,9 @@
 ^https:\/\/api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk url reject-dict
 
 #[Script]
-^https:\/\/social\.blued\.cn\/users\/\d+\/visitors\? url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/blued.js
+^https:\/\/(61\.163\.112\.48|183\.204\.229\.27|122\.188\.185\.240).* url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/blued.js
+^https:\/\/(111\.48\.229\.242|111\.48\.231\.250).* url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/blued.js
+^https:\/\/social\.blued\.cn\/users\/\d+\/(visitors|flash)(\/.*|\?.*)?$ url script-response-body https://raw.githubusercontent.com/wutheringCliff/resources/master/QuantumultX/Scripts/blued.js
 
 #[MITM]
-hostname = social.blued.cn, api-access.pangolin-sdk-toutiao1.com, api-access.pangolin-sdk-toutiao-b.com, p3-be-pack-sign.pglstatp-toutiao.com
+hostname = social.blued.cn, 61.163.112.48, 122.188.185.240, 111.48.229.242, 111.48.231.250, 183.204.229.27, api-access.pangolin-sdk-toutiao1.com, api-access.pangolin-sdk-toutiao-b.com, p3-be-pack-sign.pglstatp-toutiao.com
