@@ -6,7 +6,7 @@ try {
     obj = JSON.parse($response.body);
 } catch (e) {
     console.log(`JSON 解析失败: ${e.message}`);
-    $done({});
+    $done({body: $response.body});
 }
 
 // const logID = "ID_" + Math.random().toString(36).slice(2, 10).toUpperCase();
@@ -28,46 +28,68 @@ const clearArray = (arr) => {
     if (Array.isArray(arr)) arr.length = 0;
 };
 
-const RULES = {
-    "/vas/nearby/v2": (data) => {
-        setBoolean(data, 'vipRequired', false);
-        processArray(data.superboostList, item => setBoolean(item, 'hide', false));
-        processArray(data.list, item => setBoolean(item, 'hide', false));
-    },
-    "/vas/visitor": (data) => {
-        clearArray(data.iosPublicOptions);
-        setBoolean(data, 'visitorEnable', true);
-    },
-    "/user/setting/filter": (data) => {
-        setBoolean(data, 'filterEnable', true);
-        setBoolean(data, 'useFilter', true);
-    },
-    "/user/profile/view/v3": (data) => {
-        const user = data?.user;
-        if (user) {
-            ['vip', 'svip', 'ssvip', 'pro'].forEach(prop => setBoolean(user, prop, true));
+const RULES = [
+    {
+        match: (url) => new URL(url).pathname === '/vas/nearby/v2',
+        handler: (data) => {
+            // setBoolean(data, 'vipRequired', false);
+            processArray(data.superboostList, i => setBoolean(i, 'hide', false));
+            processArray(data.list, i => setBoolean(i, 'hide', false));
         }
     },
-    "/inbox/session/get/v3": (data) => {
-        setBoolean(data, 'hasPrivilege', true);
-        setBoolean(data, 'stealthMessage', true);
-        processArray(data?.list, item => {
-            setBoolean(item, 'stealthMessage', true);
-            if (item?.visitorInfo) setBoolean(item.visitorInfo, 'visitorEnable', true);
-        });
+    {
+        match: (url) => new URL(url).pathname === '/vas/visitor',
+        handler: (data) => {
+            clearArray(data.iosPublicOptions);
+            setBoolean(data, 'visitorEnable', true);
+        }
     },
-    "/group/session": (data) => {
-        processArray(data?.list, item => {
-            setBoolean(item, 'stealthMessage', true);
-            if (item?.visitorInfo) setBoolean(item.visitorInfo, 'visitorEnable', true);
-        });
-    }
-};
+    // {
+    //     match: (url) => new URL(url).pathname === '/user/setting/filter',
+    //     handler: (data) => {
+    //         setBoolean(data, 'filterEnable', true);
+    //         setBoolean(data, 'useFilter', true);
+    //     }
+    // },
+    {
+        match: (url) => /\/user\/profile\/view\/v3.*JbFgGDV3W00/.test(url),
+        handler: (data) => {
+            ['vip', 'svip', 'ssvip', 'pro'].forEach(p => setBoolean(data?.user, p, true));
+        }
+    },
 
-Object.entries(RULES).forEach(([key, handler]) => {
-    if (url.includes(key)) {
-        const data = obj?.data;
-        if (data) handler(data);
+    {
+        match: (url) => new URL(url).pathname === '/inbox/session/get/v3',
+        handler: (data) => {
+            // setBoolean(data, 'hasPrivilege', true);
+            // setBoolean(data, 'stealthMessage', true);
+            processArray(data?.list, item => {
+                // setBoolean(item, 'stealthMessage', true);
+                if (item?.visitorInfo) setBoolean(item.visitorInfo, 'visitorEnable', true);
+            });
+        }
+    },
+    {
+        match: (url) => new URL(url).pathname === '/group/session',
+        handler: (data) => {
+            processArray(data?.list, item => {
+                // setBoolean(item, 'stealthMessage', true);
+                if (item?.visitorInfo) setBoolean(item.visitorInfo, 'visitorEnable', true);
+            });
+        }
+    }
+];
+
+RULES.some(({ match, handler }) => {
+    try {
+        if (match(url)) {
+            handler(obj.data || {});
+            return true;
+        }
+        return false;
+    } catch (e) {
+        console.log(`规则处理失败: ${e}`);
+        return false;
     }
 });
 
